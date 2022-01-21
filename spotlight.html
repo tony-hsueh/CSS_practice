@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(29, 28, 28);
+        }
+        h1{
+            width: 900px;
+            color:#333;
+            font-size: 6rem;
+            margin-left: 60px;
+            letter-spacing: -0.3rem;
+            position: relative;
+        }
+        h1:after{
+            content: "Scratch lottery";
+            color: #EB5C37;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* clip-path: ellipse(80px 80px at 0% 50%); */
+            animation: spotlight 2s ease-in-out;
+
+        }
+        @keyframes spotlight {
+            0%{
+                clip-path: ellipse(80px 80px at 0% 50%);  
+            }
+            50%{
+                clip-path: ellipse(80px 80px at 100% 50%);
+            }
+            100%{
+                clip-path: ellipse(80px 80px at 0% 50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Scratch lottery</h1>
+</body>
+</html>
