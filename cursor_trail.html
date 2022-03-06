@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor with a ball</title>
+    <style>
+        body {
+            background: rgb(17, 15, 15);
+        }
+        .cursor{
+            position: absolute;
+            z-index: 999;
+            width: 20px;
+            height: 20px;
+            /* border: 1px solid gray; */
+            background: gray;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(100%,100%);
+            box-shadow: 0 0 20px gray,
+                        0 0 60px rgb(133, 127, 127),
+                        0 0 80px rgb(121, 112, 112);
+            left: 0;
+            top: 0;
+            /* transition-property: left,top;
+            transition-duration: 0.1s; */
+            animation: color 1s linear infinite ;
+        }
+        @keyframes color {
+            from{
+                background: rgb(156, 243, 56);
+            }
+            to{
+                background: rgb(17, 15, 15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+
+    <script>
+        const cursor = document.querySelector('.cursor');
+        window.addEventListener('mousemove',function(e){
+            
+            cursor.style.left = `${e.offsetX}px`;
+            cursor.style.top = `${e.offsetY}px`;
+
+        })
+    </script>
+</body>
+</html>
